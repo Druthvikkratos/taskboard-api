@@ -26,4 +26,8 @@ export class TasksService {
     this.tasks = this.tasks.filter((t) => t.id !== id);
     return { deleted: true };
   }
+
+  count() {
+    return this.tasks.length;
+  }
 }
