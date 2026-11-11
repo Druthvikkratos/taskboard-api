@@ -5,6 +5,8 @@ import { AppService } from './app.service.js';
 import { TasksModule } from './tasks/tasks.module.js';
 import { ConfigModule } from '@nestjs/config';
 import z from 'zod';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+import { ScheduleModule } from '@nestjs/schedule';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -25,6 +27,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
         JWT_SECRET: z.string().min(10),
       }),
     }),
+    EventEmitterModule.forRoot(),
+    ScheduleModule.forRoot(),
     TasksModule,
   ],
   controllers: [AppController],
