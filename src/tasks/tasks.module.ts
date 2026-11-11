@@ -3,9 +3,10 @@ import { TasksController } from './tasks.controller.js';
 import { TasksService } from './tasks.service.js';
 import { TaskListener } from './tasks.listener.js';
 import { TasksCorn } from './tasks.cron.js';
+import { TasksGateway } from './tasks.gateway.js';
 
 @Module({
   controllers: [TasksController],
-  providers: [TasksService, TaskListener, TasksCorn]
+  providers: [TasksService, TaskListener, TasksCorn, TasksGateway]
 })
 export class TasksModule {}
