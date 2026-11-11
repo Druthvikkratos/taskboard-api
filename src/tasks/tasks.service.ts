@@ -17,4 +17,10 @@ export class TasksService {
     if (!task) throw new NotFoundException('Task not found');
     return task;
   }
+
+  remove(id: number){
+    this.findOne(id)
+    this.tasks = this.tasks.filter((t) => t.id !== id)
+    return {deleted: true}
+  }
 }
